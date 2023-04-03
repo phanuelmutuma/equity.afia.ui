@@ -1,2 +1,2 @@
-# Equity-Afia-Web-UI
+# wquity.afia.ui
 Web User Interface for Equity Afia Chatbot
