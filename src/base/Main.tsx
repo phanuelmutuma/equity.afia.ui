@@ -18,11 +18,11 @@ const Main = (props: IMainProps) => (
         <Navbar />
       </header>
 
-      <div>
+      <div className="hidden md:flex">
         <SideBar />
       </div>
 
-      <main className="mt-12 px-1 pt-2 sm:ml-60">
+      <main className="mt-12 px-1 pt-2 md:ml-60">
         <div
           className="m-2 rounded-lg bg-white p-4 shadow-md"
           style={{ minHeight: "calc(100vh - 7rem)" }}

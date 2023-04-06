@@ -16,7 +16,7 @@ const index = () => {
         <div className="px-4 text-3xl font-bold text-equity-yellow-700">
           Dashboard
         </div>
-        <div className="flex justify-between">
+        <div className="justify-between md:flex">
           <div className="mx-4 mt-4 h-40 w-full rounded-lg bg-gray-100 px-2">
             <RepliedChart />
           </div>
