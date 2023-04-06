@@ -1,0 +1,22 @@
+import React from "react";
+
+import { Main } from "@/base/Main";
+import Dashboard from "@/components/base";
+import { Meta } from "@/layouts/Meta";
+import { AppConfig } from "@/utils/AppConfig";
+
+const index = () => {
+  return (
+    <Main
+      meta={
+        <Meta title={AppConfig.title} description={AppConfig.description} />
+      }
+    >
+      <div>
+        <Dashboard />
+      </div>
+    </Main>
+  );
+};
+
+export default index;

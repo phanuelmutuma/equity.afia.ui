@@ -9,6 +9,7 @@
     "prettier/prettier": [
       "error",
       {
+        "singleQuote": false,
         "endOfLine": "auto"
       }
     ]
@@ -36,6 +37,7 @@
         "prettier/prettier": [
           "error",
           {
+            "singleQuote": false,
             "endOfLine": "auto"
           }
         ],
