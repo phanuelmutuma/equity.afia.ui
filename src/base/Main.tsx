@@ -10,7 +10,7 @@ type IMainProps = {
 };
 
 const Main = (props: IMainProps) => (
-  <div className="h-screen w-full bg-gray-200/80 text-gray-700 antialiased">
+  <div className="max-h-screen w-full bg-gray-200/80 text-gray-700 antialiased">
     {props.meta}
 
     <div>

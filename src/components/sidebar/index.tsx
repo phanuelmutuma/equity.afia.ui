@@ -30,13 +30,13 @@ const SideBar = () => {
   const clinicTab = [
     {
       name: "All Clinics",
-      href: "/clinics",
+      href: "/base",
       icon: HeroiconName.BuildingOfficeIcon,
       current: true,
     },
     {
       name: "Clinic Setup",
-      href: "/clinic-setup",
+      href: "/base",
       icon: HeroiconName.WrenchScrewdriverIcon,
       current: true,
     },
@@ -44,7 +44,7 @@ const SideBar = () => {
   const serviceTab = [
     {
       name: "View Services",
-      href: "/services",
+      href: "/base",
       icon: HeroiconName.ShieldCheckIcon,
       current: true,
     },

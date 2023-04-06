@@ -6,12 +6,12 @@ import HeroIcon from "@/icons/HeroIcon";
 const Dashboard = () => {
   return (
     <div>
-      <div className="grid h-full w-full rounded">
-        <div>
+      <div className="">
+        <div className="">
           <div className="flex items-center gap-2 px-5 md:gap-4">
             <div className="w-full">
               <h3 className="-mb-px inline-flex items-center space-x-2 border-b-2 border-equity-brown-300 py-4 text-equity-brown-500">
-                <button
+                {/* <button
                   type="button"
                   className="flex items-center justify-center rounded-full bg-transparent p-2 text-6xl font-medium text-gray-500 outline-none transition hover:bg-equity-brown-100 hover:text-equity-brown-600 focus:outline-none"
                   title="Back"
@@ -20,13 +20,13 @@ const Dashboard = () => {
                     className="h-6 w-6 stroke-current"
                     name="ArrowLeftIcon"
                   />
-                </button>
+                </button> */}
                 <div className="flex items-start space-x-1 text-equity-brown-500/60">
                   <HeroIcon
                     className="h-6 w-6 stroke-current"
                     name="CircleStackIcon"
                   />
-                  <span className="truncate text-xs font-medium uppercase leading-none tracking-wider text-equity-brown-500 antialiased md:text-base ">
+                  <span className="truncate pl-2 text-xs font-medium uppercase leading-none tracking-wider text-equity-brown-500 antialiased md:text-base ">
                     Section Title
                   </span>
                 </div>
@@ -89,7 +89,10 @@ const Dashboard = () => {
           <div className="border-b"></div>
         </div>
 
-        <div className="grid h-96 items-center border-b border-gray-100">
+        <div
+          className="flex items-center justify-center border-b border-gray-100"
+          style={{ minHeight: "calc(100vh - 20rem)" }}
+        >
           <div className=" hidden h-full place-items-center">
             {/* <loading-view /> */}
           </div>
@@ -113,7 +116,7 @@ const Dashboard = () => {
             className="flex h-full items-center justify-center"
           >
             <span className="animate-pulse self-center text-xl font-semibold text-yellow-600">
-              No records found.
+              No records found!
             </span>
           </div>
         </div>
