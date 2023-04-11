@@ -3,7 +3,7 @@ import React from "react";
 const Loading = () => {
   return (
     <div>
-      <div className="animate-pulse space-y-4 divide-y divide-gray-200 rounded border border-gray-200 p-4 shadow md:p-6">
+      <div className="animate-pulse space-y-4 divide-y divide-gray-200  border-gray-200 p-4 md:p-6">
         <div className="flex items-center justify-between">
           <div>
             <div className="mb-2.5 h-2.5 w-24 rounded-full bg-gray-300"></div>

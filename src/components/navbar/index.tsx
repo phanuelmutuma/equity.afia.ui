@@ -1,4 +1,10 @@
-import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/nextjs";
+import {
+  SignedIn,
+  SignedOut,
+  SignInButton,
+  UserButton,
+  useUser,
+} from "@clerk/nextjs";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import Image from "next/image";
 import img from "public/assets/images/logo.png";
@@ -12,6 +18,8 @@ function classNames(...classes: string[]) {
 }
 
 const NavBar = () => {
+  const { user } = useUser();
+
   return (
     <Disclosure as="nav">
       <>
@@ -22,7 +30,9 @@ const NavBar = () => {
                 <Image src={img} alt="Equity Afia" width={90} height={40} />
               </div>
               <div className="ml-16 hidden items-center border-l border-equity-brown-200 pl-5 font-bold text-equity-brown-900 lg:flex ">
-                {greetByTime()}, Welcome to {AppConfig.site_name}
+                {greetByTime()}
+                {user?.firstName && ` ${user?.firstName}`}, Welcome to{" "}
+                {AppConfig.site_name}
               </div>
             </div>
             <div className="absolute inset-y-0 right-0 flex items-center px-14 lg:static lg:inset-auto lg:ml-6">

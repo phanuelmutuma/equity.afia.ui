@@ -4,14 +4,14 @@ import React from "react";
 const RepliedChart = () => {
   const someData = [
     {
-      id: "Replied",
-      label: "replied",
+      id: "Appointment Pending Booking",
+      label: "appointment pending booking",
       value: 1,
       color: "hsl(31, 70%, 50%)",
     },
     {
-      id: "Not Replied",
-      label: "not replied",
+      id: "Appointment Booked",
+      label: "appointment booked",
       value: 1,
       color: "hsl(265, 70%, 50%)",
     },
@@ -31,7 +31,7 @@ const RepliedChart = () => {
           from: "color",
           modifiers: [["darker", 0.2]],
         }}
-        arcLinkLabelsTextOffset={14}
+        arcLinkLabelsTextOffset={5}
         arcLinkLabelsTextColor="#333333"
         arcLinkLabelsOffset={-50}
         arcLinkLabelsDiagonalLength={36}
