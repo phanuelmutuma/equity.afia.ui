@@ -103,7 +103,7 @@ const AddClinic = ({ open, setOpen, clinicId }: Props) => {
                             {clinic?.data.ward}
                           </div>
                         </div>
-                        <div>
+                        <div className="hidden">
                           <label
                             className="text-sm font-medium"
                             htmlFor="latitude"
@@ -114,7 +114,7 @@ const AddClinic = ({ open, setOpen, clinicId }: Props) => {
                             {clinic?.data.latitude}
                           </div>
                         </div>
-                        <div>
+                        <div className="hidden">
                           <label
                             className="text-sm font-medium"
                             htmlFor="longitude"
@@ -145,7 +145,7 @@ const AddClinic = ({ open, setOpen, clinicId }: Props) => {
                           </div>
                         </div>
 
-                        <div className="col-span-2">
+                        <div>
                           <label
                             className="text-sm font-medium"
                             htmlFor="operatingHour[0].days"
