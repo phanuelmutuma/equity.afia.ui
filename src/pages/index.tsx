@@ -14,7 +14,7 @@ const index = () => {
       currentTab="Dashboard"
     >
       <div>
-        <div className="px-4 text-3xl font-bold text-equity-yellow-700">
+        <div className="px-6 py-4 text-3xl font-bold text-equity-yellow-700">
           Dashboard
         </div>
         <div className="justify-between md:flex">

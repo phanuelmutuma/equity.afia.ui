@@ -8,9 +8,25 @@ import mutationFetcher from "@/utils/mutationFetcher";
 import mutationPutFetcher from "@/utils/mutationPutFetcher";
 
 export const useClinics = () => {
-  const { data, error, isLoading } = useSWR(`/api/get-clinics/`, fetcher);
+  const { data, error, isLoading, mutate } = useSWR(
+    `/api/get-clinics/`,
+    fetcher
+  );
   return {
     clinics: data,
+    isLoading,
+    isError: error,
+    mutate,
+  };
+};
+
+export const useClinic = (clinicId: any) => {
+  const { data, error, isLoading } = useSWR(
+    `/api/get-clinic/${clinicId}`,
+    fetcher
+  );
+  return {
+    clinic: data,
     isLoading,
     isError: error,
   };
@@ -40,31 +56,6 @@ export const DeleteClinicModel = (clinicId: any) => {
   );
   return {
     trigger,
-  };
-};
-
-export const useClinic = (clinicId: any) => {
-  const { data, error, isLoading } = useSWR(
-    `/api/get-clinic/${clinicId}`,
-    fetcher
-  );
-  return {
-    clinic: data,
-    isLoading,
-    isError: error,
-  };
-};
-
-export const useClinicService = () => {
-  const { data, error, isLoading, mutate } = useSWR(
-    `/api/get-clinic-services`,
-    fetcher
-  );
-  return {
-    clinicService: data,
-    isLoading,
-    isError: error,
-    mutate,
   };
 };
 
@@ -121,10 +112,56 @@ export const DeleteServiceModel = (serviceId: any) => {
   };
 };
 
+export const useClinicServices = () => {
+  const { data, error, isLoading, mutate } = useSWR(
+    `/api/get-clinic-services`,
+    fetcher
+  );
+  return {
+    clinicServices: data,
+    isLoading,
+    isError: error,
+    mutate,
+  };
+};
+
+export const useClinicService = (serviceId: any) => {
+  const { data, error, isLoading } = useSWR(
+    `/api/get-clinic-service/${serviceId}`,
+    fetcher
+  );
+  return {
+    clinicService: data,
+    isLoading,
+    isError: error,
+  };
+};
+
 export const PostClinicService = () => {
   const { trigger } = useSWRMutation(
     "/api/post-clinic-service",
     mutationFetcher
+  );
+  return {
+    trigger,
+  };
+};
+
+export const UpdateClinicServiceModel = (serviceId: any) => {
+  const { trigger } = useSWRMutation(
+    `/api/update-clinic-service/${serviceId}`,
+    mutationPutFetcher,
+    { revalidate: true }
+  );
+  return {
+    trigger,
+  };
+};
+
+export const DeleteClinicServiceModel = (serviceId: any) => {
+  const { trigger } = useSWRMutation(
+    `/api/delete-clinic-service/${serviceId}`,
+    mutationDeleteFetcher
   );
   return {
     trigger,

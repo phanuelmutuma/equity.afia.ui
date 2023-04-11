@@ -7,9 +7,9 @@ export default async function handler(
   const { body } = req;
 
   const response = await fetch(
-    "https://valentia-bot.azurewebsites.net/api/ClinicService",
+    `https://valentia-bot.azurewebsites.net/api/ClinicService/${req.query.id}`,
     {
-      method: "POST",
+      method: "PUT",
       body: JSON.stringify({
         serviceId: body.data?.serviceId,
         clinicId: body.data?.clinicId,
@@ -18,9 +18,9 @@ export default async function handler(
         daysOffered: [
           {
             days: body.data?.daysOffered[0].days,
-            start: `${body.data?.daysOffered[0].start}:00`,
-            end: `${body.data?.daysOffered[0].end}:00`,
-            daysDescription: body.data?.daysOffered[0].daysDescription,
+            start: `${body.data?.daysOffered[0].start}`,
+            end: `${body.data?.daysOffered[0].end}`,
+            daysDescription: `${body.data?.daysOffered[0].daysDescription}`,
           },
         ],
       }),

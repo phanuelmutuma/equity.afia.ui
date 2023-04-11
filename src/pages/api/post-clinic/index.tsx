@@ -17,7 +17,7 @@ export default async function handler(
         county: body.data.county,
         subCounty: body.data.subCounty,
         ward: body.data.ward,
-        lattitude: body.data.latitude,
+        latitude: body.data.latitude,
         longitude: body.data.longitude,
         tel: body.data.tel,
         isActive: body.data.isActive,

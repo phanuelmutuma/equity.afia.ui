@@ -117,7 +117,7 @@ const AddClinic = ({ open, setOpen }: Props) => {
             leaveFrom="opacity-100"
             leaveTo="opacity-0"
           >
-            <div className="fixed inset-0 bg-black/25" />
+            <div className="fixed inset-0 bg-black/50" />
           </Transition.Child>
 
           <div className="fixed inset-0 overflow-y-auto">
@@ -131,15 +131,15 @@ const AddClinic = ({ open, setOpen }: Props) => {
                 leaveFrom="opacity-100 scale-100"
                 leaveTo="opacity-0 scale-95"
               >
-                <Dialog.Panel className="w-full overflow-hidden rounded-md bg-white p-6 text-left align-middle shadow-xl transition-all lg:max-w-5xl">
+                <Dialog.Panel className="w-full overflow-hidden rounded-md bg-white text-left align-middle shadow-xl transition-all lg:max-w-5xl">
                   <Dialog.Title
                     as="h3"
-                    className="text-lg font-medium leading-6 text-gray-900"
+                    className="rounded-t bg-equity-yellow-100 px-8 py-4 text-xl font-bold leading-6 text-equity-yellow-900"
                   >
                     Add Clinic
                   </Dialog.Title>
 
-                  <div className="mt-6 px-3">
+                  <div className="px-8 py-5">
                     <Formik
                       initialValues={initialValues}
                       validationSchema={validationSchema}
@@ -338,13 +338,13 @@ const AddClinic = ({ open, setOpen }: Props) => {
                               className="mt-2 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500"
                               multiple={true}
                             >
-                              <option value="monday">Monday</option>
-                              <option value="tuesday">Tuesday</option>
-                              <option value="wednesday">Wednesday</option>
-                              <option value="thursday">Thursday</option>
-                              <option value="friday">Friday</option>
-                              <option value="saturday">Saturday</option>
-                              <option value="sunday">Sunday</option>
+                              <option value="Mon">Monday</option>
+                              <option value="Tue">Tuesday</option>
+                              <option value="Wed">Wednesday</option>
+                              <option value="Thur">Thursday</option>
+                              <option value="Fri">Friday</option>
+                              <option value="Sat">Saturday</option>
+                              <option value="Sun">Sunday</option>
                             </Field>
 
                             <ErrorMessage
@@ -514,14 +514,14 @@ const AddClinic = ({ open, setOpen }: Props) => {
                               </label>
                             </div>
                           </div>
-                          <div className="col-span-3 flex w-full items-end justify-end">
+                          <div className="col-span-3 flex w-full items-end justify-end border-t">
                             <button
                               type="submit"
                               className={`${
                                 !formik.isValid
                                   ? "cursor-not-allowed bg-blue-100 text-blue-900"
                                   : "cursor-pointer bg-blue-100 text-blue-900 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
-                              } rounded-md border border-transparent px-20 py-3 text-sm font-medium`}
+                              } mt-4 rounded-md border border-transparent px-20 py-3 text-sm font-medium`}
                               onClick={() => setOpen(false)}
                               disabled={!formik.isValid}
                             >
@@ -532,16 +532,6 @@ const AddClinic = ({ open, setOpen }: Props) => {
                       )}
                     </Formik>
                   </div>
-
-                  {/* <div className="mt-4">
-                    <button
-                      type="button"
-                      className="inline-flex justify-center rounded-md border border-transparent bg-blue-100 px-4 py-2 text-sm font-medium text-blue-900 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
-                      onClick={() => setOpen(false)}
-                    >
-                      Got it, thanks!
-                    </button>
-                  </div> */}
                 </Dialog.Panel>
               </Transition.Child>
             </div>

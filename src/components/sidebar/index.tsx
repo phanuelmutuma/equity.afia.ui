@@ -1,17 +1,15 @@
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
 
 import HeroIcon from "@/icons/HeroIcon";
-
-function classNames(...classes: string[]) {
-  return classes.filter(Boolean).join(" ");
-}
 
 interface Props {
   currentTab: string;
 }
 
 const SideBar = ({ currentTab }: Props) => {
+  const [sidebarOpen, setSidebarOpen] = useState(false);
+
   enum HeroiconName {
     HomeIcon = "HomeIcon",
     BuildingOfficeIcon = "BuildingOfficeIcon",
@@ -78,7 +76,7 @@ const SideBar = ({ currentTab }: Props) => {
     },
     {
       name: "Service Setup",
-      href: "/service-setup",
+      href: "/service",
       icon: HeroiconName.WrenchScrewdriverIcon,
       current: true,
     },
@@ -103,11 +101,36 @@ const SideBar = ({ currentTab }: Props) => {
   ];
   return (
     <div>
-      <aside className="fixed left-0 top-0 z-40 h-screen w-60 translate-x-full bg-equity-yellow-100/50 pt-12 transition-transform sm:translate-x-0">
-        <div className="flex items-center justify-center border-b border-equity-brown-100 py-8 text-sm font-bold uppercase tracking-wider text-equity-brown-900 ">
-          ChatBot
+      <aside
+        className={`${
+          sidebarOpen ? "w-60 bg-equity-yellow-100" : "w-20 bg-white"
+        } sticky left-0 top-0 z-40 translate-x-full pt-12 transition-transform sm:translate-x-0`}
+      >
+        <div className="flex items-center justify-center border-b border-white py-8 text-sm font-bold uppercase tracking-wider text-equity-brown-900 ">
+          <button className="px-4" onClick={() => setSidebarOpen(!sidebarOpen)}>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              className="h-6 w-6"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+              />
+            </svg>
+          </button>
+          <span className={`${sidebarOpen ? "flex" : "hidden"} `}>
+            Valentia Bot
+          </span>
         </div>
-        <div className=" h-full overflow-y-auto bg-white px-3 pb-4 pt-2">
+        <div
+          className="overflow-y-auto bg-white px-3 pb-4 pt-2"
+          style={{ minHeight: "calc(100vh - 8.7rem)" }}
+        >
           {/* <div className="mt-3 space-y-4">
             {dashTab.map((item) => (
               <div
@@ -245,7 +268,8 @@ const SideBar = ({ currentTab }: Props) => {
           </Disclosure> */}
           <div className="mt-3 space-y-4">
             {navTabs.map((item) => (
-              <div
+              <Link
+                href={item.href}
                 key={item.name}
                 className={`${
                   item.name === currentTab
@@ -254,16 +278,15 @@ const SideBar = ({ currentTab }: Props) => {
                 } flex items-center rounded-lg px-4 py-2 text-equity-brown-900`}
               >
                 <HeroIcon name={item.icon} />
-                <Link
-                  href={item.href}
-                  className={classNames(
-                    "flex w-full justify-between uppercase tracking-wide leading-wide px-4 py-2 text-left text-sm font-medium "
-                  )}
+                <div
+                  className={`${
+                    sidebarOpen ? "flex" : "hidden"
+                  }  w-full justify-between px-4 py-2 text-left text-sm font-medium uppercase tracking-wide`}
                   aria-current={item.name === "currentTab" ? "page" : undefined}
                 >
                   {item.name}
-                </Link>
-              </div>
+                </div>
+              </Link>
             ))}
           </div>
         </div>

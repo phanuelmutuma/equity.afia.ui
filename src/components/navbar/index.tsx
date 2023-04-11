@@ -1,7 +1,7 @@
 import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/nextjs";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import Image from "next/image";
-import img from "public/assets/images/white-logo.png";
+import img from "public/assets/images/logo.png";
 import React, { Fragment } from "react";
 
 import { AppConfig } from "@/utils/AppConfig";
@@ -13,19 +13,19 @@ function classNames(...classes: string[]) {
 
 const NavBar = () => {
   return (
-    <Disclosure as="nav" className={`px-14 `}>
+    <Disclosure as="nav">
       <>
-        <div className="mx-auto py-1 sm:px-6">
+        <div className="py-1 sm:px-6">
           <div className="relative flex h-14 items-center justify-between lg:h-10">
-            <div className="flex flex-1 items-center justify-center lg:items-stretch lg:justify-start">
+            <div className="flex flex-1 items-center justify-center px-14 lg:items-stretch lg:justify-start">
               <div className="flex shrink-0 items-center">
                 <Image src={img} alt="Equity Afia" width={90} height={40} />
               </div>
-              <div className="ml-16 hidden items-center border-l border-equity-brown-200 pl-5 font-bold text-white lg:flex ">
+              <div className="ml-16 hidden items-center border-l border-equity-brown-200 pl-5 font-bold text-equity-brown-900 lg:flex ">
                 {greetByTime()}, Welcome to {AppConfig.site_name}
               </div>
             </div>
-            <div className="absolute inset-y-0 right-0 flex items-center pr-2 lg:static lg:inset-auto lg:ml-6 lg:pr-0">
+            <div className="absolute inset-y-0 right-0 flex items-center px-14 lg:static lg:inset-auto lg:ml-6">
               <SignedIn>
                 {/* Mount the UserButton component */}
                 <UserButton
