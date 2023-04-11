@@ -76,7 +76,7 @@ const SideBar = ({ currentTab }: Props) => {
     },
     {
       name: "Service Setup",
-      href: "/service",
+      href: "/service-setup",
       icon: HeroiconName.WrenchScrewdriverIcon,
       current: true,
     },
