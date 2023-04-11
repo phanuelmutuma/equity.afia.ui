@@ -9,7 +9,11 @@ function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(" ");
 }
 
-const SideBar = () => {
+interface Props {
+  currentTab: string;
+}
+
+const SideBar = ({ currentTab }: Props) => {
   enum HeroiconName {
     HomeIcon = "HomeIcon",
     BuildingOfficeIcon = "BuildingOfficeIcon",
@@ -30,7 +34,7 @@ const SideBar = () => {
   const clinicTab = [
     {
       name: "All Clinics",
-      href: "/base",
+      href: "/clinics",
       icon: HeroiconName.BuildingOfficeIcon,
       current: true,
     },
@@ -87,7 +91,7 @@ const SideBar = () => {
               <div
                 key={item.name}
                 className={`${
-                  item.name === "Dashboard"
+                  currentTab === item.name
                     ? " bg-equity-brown-900 text-white"
                     : "hover:bg-equity-brown-900 hover:text-white"
                 } flex items-center rounded-lg px-4 py-2 text-equity-brown-900`}
@@ -110,7 +114,10 @@ const SideBar = () => {
               <>
                 <Disclosure.Button
                   className={`${
-                    open ? " bg-equity-brown-100" : ""
+                    currentTab === "All Clinics" ||
+                    currentTab === "Clinic Setup"
+                      ? " bg-equity-brown-100"
+                      : ""
                   } mt-3 flex w-full items-center justify-between rounded-lg px-4 py-2 text-left font-medium text-equity-brown-900 hover:bg-equity-brown-200 focus:outline-none focus-visible:ring`}
                 >
                   <div className="flex items-center rounded-lg  text-equity-brown-900">
@@ -131,7 +138,7 @@ const SideBar = () => {
                       <div
                         key={item.name}
                         className={`${
-                          item.name === "currentTab"
+                          item.name === currentTab
                             ? " bg-equity-brown-900 text-white"
                             : "hover:bg-equity-brown-900 hover:text-white"
                         } flex items-center rounded-lg px-4 py-2 text-equity-brown-900`}
@@ -160,7 +167,11 @@ const SideBar = () => {
               <>
                 <Disclosure.Button
                   className={`${
-                    open ? " bg-equity-brown-100" : ""
+                    currentTab === "View Services" ||
+                    currentTab === "Services Setup" ||
+                    open
+                      ? " bg-equity-brown-100"
+                      : ""
                   } mt-3 flex w-full items-center justify-between rounded-lg  px-4 py-2 text-left font-medium text-equity-brown-900 hover:bg-equity-brown-200 focus:outline-none focus-visible:ring`}
                 >
                   <div className="flex items-center rounded-lg  text-equity-brown-900">
@@ -172,7 +183,11 @@ const SideBar = () => {
 
                   <ChevronUpIcon
                     className={`${
-                      open ? "" : "rotate-180"
+                      currentTab === "View Services" ||
+                      currentTab === "Services Setup" ||
+                      open
+                        ? ""
+                        : "rotate-180"
                     } h-5 w-5 text-equity-brown-500`}
                   />
                 </Disclosure.Button>
@@ -182,7 +197,7 @@ const SideBar = () => {
                       <div
                         key={item.name}
                         className={`${
-                          item.name === "currentTab"
+                          item.name === currentTab
                             ? " bg-equity-brown-900 text-white"
                             : "hover:bg-equity-brown-900 hover:text-white"
                         } flex items-center rounded-lg px-4 py-2 text-equity-brown-900`}
@@ -211,7 +226,7 @@ const SideBar = () => {
               <div
                 key={item.name}
                 className={`${
-                  item.name === "currentTab"
+                  item.name === currentTab
                     ? " bg-equity-brown-900 text-white"
                     : "hover:bg-equity-brown-900 hover:text-white"
                 } flex items-center rounded-lg px-4 py-2 text-equity-brown-900`}

@@ -7,6 +7,7 @@ import { AppConfig } from "@/utils/AppConfig";
 type IMainProps = {
   meta: ReactNode;
   children: ReactNode;
+  currentTab: string;
 };
 
 const Main = (props: IMainProps) => (
@@ -19,7 +20,7 @@ const Main = (props: IMainProps) => (
       </header>
 
       <div className="hidden md:flex">
-        <SideBar />
+        <SideBar currentTab={props.currentTab} />
       </div>
 
       <main className="mt-12 px-1 pt-2 md:ml-60">

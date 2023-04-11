@@ -1,7 +1,6 @@
 import React from "react";
 
 import { Main } from "@/base/Main";
-import Dashboard from "@/components/base";
 import { Meta } from "@/layouts/Meta";
 import { AppConfig } from "@/utils/AppConfig";
 
@@ -11,10 +10,9 @@ const index = () => {
       meta={
         <Meta title={AppConfig.title} description={AppConfig.description} />
       }
+      currentTab=""
     >
-      <div>
-        <Dashboard />
-      </div>
+      <div>{/* <Dashboard /> */}</div>
     </Main>
   );
 };
