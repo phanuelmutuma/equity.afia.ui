@@ -28,7 +28,7 @@ const AddClinic = ({ open, setOpen, clinicId }: Props) => {
             leaveFrom="opacity-100"
             leaveTo="opacity-0"
           >
-            <div className="fixed inset-0 bg-black/25" />
+            <div className="fixed inset-0 bg-black/50" />
           </Transition.Child>
 
           <div className="fixed inset-0 overflow-y-auto">
@@ -42,10 +42,10 @@ const AddClinic = ({ open, setOpen, clinicId }: Props) => {
                 leaveFrom="opacity-100 scale-100"
                 leaveTo="opacity-0 scale-95"
               >
-                <Dialog.Panel className="w-full overflow-hidden rounded-md bg-white p-6 text-left align-middle shadow-xl transition-all lg:max-w-5xl">
+                <Dialog.Panel className="w-full overflow-hidden rounded-md bg-white text-left align-middle shadow-xl transition-all lg:max-w-5xl">
                   <Dialog.Title
                     as="h3"
-                    className="text-lg font-medium leading-6 text-gray-900"
+                    className="rounded-t bg-equity-yellow-100 px-8 py-4 text-xl font-bold leading-6 text-equity-yellow-900"
                   >
                     View Clinic
                   </Dialog.Title>
@@ -55,13 +55,13 @@ const AddClinic = ({ open, setOpen, clinicId }: Props) => {
                     </div>
                   )}
                   {!isLoading && (
-                    <div className="mt-6 px-3">
+                    <div className="px-8 py-7">
                       <div className="grid grid-cols-3 gap-6">
                         <div>
                           <label className="text-sm font-medium" htmlFor="name">
                             Name
                           </label>
-                          <div className="mt-2 block w-full py-1.5 text-sm text-gray-900">
+                          <div className="mt-2 block w-full rounded-lg border border-gray-300 bg-gray-50 p-3 text-sm text-gray-900">
                             {clinic?.data.name}
                           </div>
                         </div>
@@ -69,7 +69,7 @@ const AddClinic = ({ open, setOpen, clinicId }: Props) => {
                           <label className="text-sm font-medium" htmlFor="code">
                             Code
                           </label>
-                          <div className="mt-2 block w-full py-1.5 text-sm text-gray-900">
+                          <div className="mt-2 block w-full rounded-lg border border-gray-300 bg-gray-50 p-3 text-sm text-gray-900">
                             {clinic?.data.code}
                           </div>
                         </div>
@@ -80,7 +80,7 @@ const AddClinic = ({ open, setOpen, clinicId }: Props) => {
                           >
                             County
                           </label>
-                          <div className="mt-2 block w-full py-1.5 text-sm text-gray-900">
+                          <div className="mt-2 block w-full rounded-lg border border-gray-300 bg-gray-50 p-3 text-sm text-gray-900">
                             {clinic?.data.county}
                           </div>
                         </div>
@@ -91,7 +91,7 @@ const AddClinic = ({ open, setOpen, clinicId }: Props) => {
                           >
                             Sub County
                           </label>
-                          <div className="mt-2 block w-full py-1.5 text-sm text-gray-900">
+                          <div className="mt-2 block w-full rounded-lg border border-gray-300 bg-gray-50 p-3 text-sm text-gray-900">
                             {clinic?.data.subCounty}
                           </div>
                         </div>
@@ -99,7 +99,7 @@ const AddClinic = ({ open, setOpen, clinicId }: Props) => {
                           <label className="text-sm font-medium" htmlFor="ward">
                             Ward
                           </label>
-                          <div className="mt-2 block w-full py-1.5 text-sm text-gray-900">
+                          <div className="mt-2 block w-full rounded-lg border border-gray-300 bg-gray-50 p-3 text-sm text-gray-900">
                             {clinic?.data.ward}
                           </div>
                         </div>
@@ -110,7 +110,7 @@ const AddClinic = ({ open, setOpen, clinicId }: Props) => {
                           >
                             Latitude
                           </label>
-                          <div className="mt-2 block w-full py-1.5 text-sm text-gray-900">
+                          <div className="mt-2 block w-full rounded-lg border border-gray-300 bg-gray-50 p-3 text-sm text-gray-900">
                             {clinic?.data.latitude}
                           </div>
                         </div>
@@ -121,7 +121,7 @@ const AddClinic = ({ open, setOpen, clinicId }: Props) => {
                           >
                             Longitude
                           </label>
-                          <div className="mt-2 block w-full py-1.5 text-sm text-gray-900">
+                          <div className="mt-2 block w-full rounded-lg border border-gray-300 bg-gray-50 p-3 text-sm text-gray-900">
                             {clinic?.data.longitude}
                           </div>
                         </div>
@@ -129,7 +129,7 @@ const AddClinic = ({ open, setOpen, clinicId }: Props) => {
                           <label className="text-sm font-medium" htmlFor="tel">
                             Telephone number
                           </label>
-                          <div className="mt-2 block w-full py-1.5 text-sm text-gray-900">
+                          <div className="mt-2 block w-full rounded-lg border border-gray-300 bg-gray-50 p-3 text-sm text-gray-900">
                             {clinic?.data.tel}
                           </div>
                         </div>
@@ -140,7 +140,7 @@ const AddClinic = ({ open, setOpen, clinicId }: Props) => {
                           >
                             Email
                           </label>
-                          <div className="mt-2 block w-full py-1.5 text-sm text-gray-900">
+                          <div className="mt-2 block w-full rounded-lg border border-gray-300 bg-gray-50 p-3 text-sm text-gray-900">
                             {clinic?.data.email}
                           </div>
                         </div>
@@ -153,7 +153,7 @@ const AddClinic = ({ open, setOpen, clinicId }: Props) => {
                             Operating days
                           </label>
 
-                          <div className="mt-2 block w-full py-1.5 text-sm text-gray-900">
+                          <div className="mt-2 block w-full rounded-lg border border-gray-300 bg-gray-50 p-3 text-sm text-gray-900">
                             {typeof clinic?.data.operatingHour[0].days !==
                             "string" ? (
                               clinic?.data.operatingHour[0].days.map(
@@ -178,7 +178,7 @@ const AddClinic = ({ open, setOpen, clinicId }: Props) => {
                           >
                             Start time
                           </label>
-                          <div className="mt-2 block w-full py-1.5 text-sm text-gray-900">
+                          <div className="mt-2 block w-full rounded-lg border border-gray-300 bg-gray-50 p-3 text-sm text-gray-900">
                             {clinic?.data.operatingHour[0].start}
                           </div>
                         </div>
@@ -190,25 +190,20 @@ const AddClinic = ({ open, setOpen, clinicId }: Props) => {
                           >
                             End time
                           </label>
-                          <div className="mt-2 block w-full  py-2.5 text-sm text-gray-900">
+                          <div className="mt-2 block w-full rounded-lg border border-gray-300 bg-gray-50 p-3 text-sm text-gray-900">
                             {clinic?.data.operatingHour[0].end}
                           </div>
                         </div>
 
-                        <div className="col-span-3 mt-5">
-                          <div className="flex h-5 items-center">
-                            <input
-                              id="default-checkbox"
-                              type="checkbox"
-                              checked={clinic?.data.isActive}
-                              className="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-blue-500"
-                            />
-                            <label
-                              className="ml-2 text-sm font-medium"
-                              htmlFor="isActive"
-                            >
-                              Is Active
-                            </label>
+                        <div>
+                          <label
+                            className="text-sm font-medium"
+                            htmlFor="operatingHour[0].end"
+                          >
+                            Status
+                          </label>
+                          <div className="mt-2 block w-full rounded-lg border border-gray-300 bg-gray-50 p-3 text-sm text-gray-900">
+                            {clinic?.data.isActive ? "Active" : "Disabled"}
                           </div>
                         </div>
                       </div>
