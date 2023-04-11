@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import { useRouter } from "next/router";
+import React, { useEffect, useState } from "react";
 
 import HeroIcon from "@/icons/HeroIcon";
 
@@ -11,10 +12,19 @@ interface Props {
 }
 
 const ClinicProfile = ({ items }: Props) => {
+  const router = useRouter();
   const [viewOpen, setViewOpen] = useState(false);
   const [updateOpen, setUpdateOpen] = useState(false);
   const [deleteOpen, setDeleteOpen] = useState(false);
   const [clinicId, setClinicId] = useState(0);
+
+  useEffect(() => {
+    if (updateOpen || deleteOpen) {
+      router.push("?modal=true", undefined, { shallow: true });
+    } else {
+      router.replace("", undefined, { shallow: true });
+    }
+  }, [updateOpen, deleteOpen]);
 
   const handleItemClick = (
     cId: React.SetStateAction<number>,

@@ -111,7 +111,7 @@ const AddClinic = ({ open, setOpen, clinicId }: Props) => {
                             Latitude
                           </label>
                           <div className="mt-2 block w-full py-1.5 text-sm text-gray-900">
-                            {clinic?.data.lattitude}
+                            {clinic?.data.latitude}
                           </div>
                         </div>
                         <div>

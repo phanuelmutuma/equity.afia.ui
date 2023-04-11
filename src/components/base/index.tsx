@@ -74,7 +74,7 @@ const BaseList = ({
     <div>
       <div>
         <ButtonToRender open={isOpen} setOpen={setIsOpen} />
-        <div className=" rounded-t-lg bg-equity-brown-900 py-3">
+        <div className="rounded-t-lg bg-equity-brown-900 py-3">
           <div className="flex items-center gap-2 px-5 md:gap-4">
             <div className="flex w-full">
               {showBack && (

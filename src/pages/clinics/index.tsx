@@ -1,6 +1,7 @@
 /* eslint-disable no-console */
 /* eslint-disable import/no-extraneous-dependencies */
-import React from "react";
+import router from "next/router";
+import React, { useEffect } from "react";
 
 import { Main } from "@/base/Main";
 import BaseList from "@/components/base";
@@ -10,8 +11,10 @@ import { useClinics } from "@/model";
 import { AppConfig } from "@/utils/AppConfig";
 
 const Index = () => {
-  const { clinics, isLoading } = useClinics();
-
+  const { clinics, isLoading, mutate } = useClinics();
+  useEffect(() => {
+    mutate();
+  }, [router]);
   return (
     <Main
       meta={

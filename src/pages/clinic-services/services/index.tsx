@@ -7,11 +7,11 @@ import { Main } from "@/base/Main";
 import BaseList from "@/components/base";
 import Loading from "@/components/loading";
 import { Meta } from "@/layouts/Meta";
-import { useClinicService } from "@/model";
+import { useClinicServices } from "@/model";
 import { AppConfig } from "@/utils/AppConfig";
 
 const Index = () => {
-  const { clinicService, isLoading, mutate } = useClinicService();
+  const { clinicServices, isLoading, mutate } = useClinicServices();
   const router = useRouter();
 
   useEffect(() => {
@@ -28,7 +28,7 @@ const Index = () => {
       {isLoading && <Loading />}
       {!isLoading && (
         <BaseList
-          data={clinicService?.data}
+          data={clinicServices?.data}
           profileTemplate="ServiceProfile"
           addButtonTemplate="AddClinicService"
           add={true}
