@@ -17,17 +17,17 @@ const Index = () => {
       meta={
         <Meta title={AppConfig.title} description={AppConfig.description} />
       }
-      currentTab="All Clinics"
+      currentTab="Clinic Services"
     >
       {isLoading && <Loading />}
       {!isLoading && (
         <BaseList
           data={clinics?.data}
-          profileTemplate="ClinicProfile"
+          profileTemplate="ClinicServiceProfile"
           addButtonTemplate="AddClinic"
-          createButtonName="Add Clinic"
+          add={false}
+          createButtonName=""
           title="Clinics"
-          add={true}
           showBack={false}
           backRoute=""
         />

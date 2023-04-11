@@ -25,7 +25,7 @@ const Main = (props: IMainProps) => (
 
       <main className="mt-12 px-1 pt-2 md:ml-60">
         <div
-          className="m-2 rounded-lg bg-white p-4 shadow-md"
+          className="m-2 rounded-lg bg-white shadow-md"
           style={{ minHeight: "calc(100vh - 7rem)" }}
         >
           {props.children}

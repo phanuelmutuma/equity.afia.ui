@@ -397,9 +397,7 @@ const AddClinic = ({ open, setOpen, clinicId }: Props) => {
                                   type="checkbox"
                                   id="isActive"
                                   name="isActive"
-                                  checked={
-                                    clinic?.data.operatingHour[0].isActive
-                                  }
+                                  checked={clinic?.data.isActive}
                                   className="h-5 w-5 rounded border border-sky-300 bg-sky-50 focus:ring-blue-300"
                                 />
                                 <label

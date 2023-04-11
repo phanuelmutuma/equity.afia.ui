@@ -1,5 +1,3 @@
-import { Disclosure } from "@headlessui/react";
-import { ChevronUpIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
 import React from "react";
 
@@ -23,15 +21,49 @@ const SideBar = ({ currentTab }: Props) => {
     ChatBubbleLeftEllipsisIcon = "ChatBubbleLeftEllipsisIcon",
     ChartBarIcon = "ChartBarIcon",
   }
-  const dashTab = [
+  // const dashTab = [
+  //   {
+  //     name: "Dashboard",
+  //     href: "/",
+  //     icon: HeroiconName.HomeIcon,
+  //     current: true,
+  //   },
+  // ];
+  // const clinicTab = [
+  //   {
+  //     name: "All Clinics",
+  //     href: "/clinics",
+  //     icon: HeroiconName.BuildingOfficeIcon,
+  //     current: true,
+  //   },
+  // {
+  //   name: "Clinic Setup",
+  //   href: "/base",
+  //   icon: HeroiconName.WrenchScrewdriverIcon,
+  //   current: true,
+  // },
+  // ];
+  // const serviceTab = [
+  //   {
+  //     name: "View Services",
+  //     href: "/base",
+  //     icon: HeroiconName.ShieldCheckIcon,
+  //     current: true,
+  //   },
+  //   {
+  //     name: "Services Setup",
+  //     href: "/services-setup",
+  //     icon: HeroiconName.WrenchScrewdriverIcon,
+  //     current: true,
+  //   },
+  // ];
+  const navTabs = [
     {
       name: "Dashboard",
       href: "/",
       icon: HeroiconName.HomeIcon,
       current: true,
     },
-  ];
-  const clinicTab = [
     {
       name: "All Clinics",
       href: "/clinics",
@@ -39,27 +71,17 @@ const SideBar = ({ currentTab }: Props) => {
       current: true,
     },
     {
-      name: "Clinic Setup",
-      href: "/base",
-      icon: HeroiconName.WrenchScrewdriverIcon,
-      current: true,
-    },
-  ];
-  const serviceTab = [
-    {
-      name: "View Services",
-      href: "/base",
+      name: "Clinic Services",
+      href: "/clinic-services",
       icon: HeroiconName.ShieldCheckIcon,
       current: true,
     },
     {
-      name: "Services Setup",
-      href: "/services-setup",
+      name: "Service Setup",
+      href: "/service-setup",
       icon: HeroiconName.WrenchScrewdriverIcon,
       current: true,
     },
-  ];
-  const navTabs = [
     {
       name: "Appointments",
       href: "/appointments",
@@ -82,11 +104,11 @@ const SideBar = ({ currentTab }: Props) => {
   return (
     <div>
       <aside className="fixed left-0 top-0 z-40 h-screen w-60 translate-x-full bg-equity-yellow-100/50 pt-12 transition-transform sm:translate-x-0">
-        <div className="flex items-center justify-center border-b border-equity-brown-100 py-7 text-sm font-bold uppercase tracking-wider text-equity-yellow-400 ">
+        <div className="flex items-center justify-center border-b border-equity-brown-100 py-8 text-sm font-bold uppercase tracking-wider text-equity-brown-900 ">
           ChatBot
         </div>
         <div className=" h-full overflow-y-auto bg-white px-3 pb-4 pt-2">
-          <div className="mt-3 space-y-4">
+          {/* <div className="mt-3 space-y-4">
             {dashTab.map((item) => (
               <div
                 key={item.name}
@@ -220,7 +242,7 @@ const SideBar = ({ currentTab }: Props) => {
                 </Disclosure.Panel>
               </>
             )}
-          </Disclosure>
+          </Disclosure> */}
           <div className="mt-3 space-y-4">
             {navTabs.map((item) => (
               <div

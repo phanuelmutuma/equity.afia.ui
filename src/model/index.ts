@@ -54,3 +54,79 @@ export const useClinic = (clinicId: any) => {
     isError: error,
   };
 };
+
+export const useClinicService = () => {
+  const { data, error, isLoading, mutate } = useSWR(
+    `/api/get-clinic-services`,
+    fetcher
+  );
+  return {
+    clinicService: data,
+    isLoading,
+    isError: error,
+    mutate,
+  };
+};
+
+export const useServices = () => {
+  const { data, error, isLoading, mutate } = useSWR(
+    `/api/get-services`,
+    fetcher
+  );
+  return {
+    services: data,
+    isLoading,
+    isError: error,
+    mutate,
+  };
+};
+
+export const useService = (serviceId: any) => {
+  const { data, error, isLoading } = useSWR(
+    `/api/get-service/${serviceId}`,
+    fetcher
+  );
+  return {
+    service: data,
+    isLoading,
+    isError: error,
+  };
+};
+
+export const PostService = () => {
+  const { trigger } = useSWRMutation("/api/post-service", mutationFetcher);
+  return {
+    trigger,
+  };
+};
+
+export const UpdateServiceModel = (serviceId: any) => {
+  const { trigger } = useSWRMutation(
+    `/api/update-service/${serviceId}`,
+    mutationPutFetcher,
+    { revalidate: true }
+  );
+  return {
+    trigger,
+  };
+};
+
+export const DeleteServiceModel = (serviceId: any) => {
+  const { trigger } = useSWRMutation(
+    `/api/delete-service/${serviceId}`,
+    mutationDeleteFetcher
+  );
+  return {
+    trigger,
+  };
+};
+
+export const PostClinicService = () => {
+  const { trigger } = useSWRMutation(
+    "/api/post-clinic-service",
+    mutationFetcher
+  );
+  return {
+    trigger,
+  };
+};
