@@ -11,6 +11,7 @@ const index = () => {
       meta={
         <Meta title={AppConfig.title} description={AppConfig.description} />
       }
+      currentTab="Dashboard"
     >
       <div>
         <div className="px-4 text-3xl font-bold text-equity-yellow-700">
@@ -33,7 +34,7 @@ const index = () => {
           Patient Feedback
         </div>
         <div className="mt-4 flex w-full flex-col">
-          <div className="mx-4 flex h-[560px] flex-col rounded-lg bg-gray-100">
+          <div className="mx-4 flex h-[200px] flex-col rounded-lg bg-gray-100">
             {/* <span className="px-5 py-2 font-bold">Total Clinics</span> */}
           </div>
         </div>
