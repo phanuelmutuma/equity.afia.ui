@@ -8,7 +8,7 @@ interface Props {
 }
 
 const SideBar = ({ currentTab }: Props) => {
-  const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [sidebarOpen, setSidebarOpen] = useState(true);
 
   enum HeroiconName {
     HomeIcon = "HomeIcon",
